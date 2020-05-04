@@ -1,10 +1,27 @@
 body{
+
+    background-color:  #0074D9 ;
     display: flex;
     justify-content: center;
-    background-color: blue;
+
+}
+.outer{
+    font-size: xx-large;
+    font-family: sans-serif;
+    margin-top: 50px;
+    text-align: center;
+    /* background-color: darkblue; */
+    width: 50%;
+}
+
+.search{
+    background-color: cadetblue;
 }
 .weather-container{
-    width: 50%;
+
     background-color: white;
-    text-align: center;
+}
+img{
+    width: 400px;
+    background-color: darkblue;
 }
