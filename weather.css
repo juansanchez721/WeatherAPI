@@ -21,6 +21,28 @@ body{
 
     background-color: white;
 }
+input[type="text"]{
+    height: 50 px;
+    width: 600px;
+    background: #e7e7e7;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+}
+input[type="submit"]{
+    height: 50 px;
+    width: 100px;
+    background: #e7e7e7;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    /* padding: 10px; */
+}
 img{
     width: 400px;
     background-color: darkblue;

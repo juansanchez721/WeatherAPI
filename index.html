@@ -6,30 +6,35 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content = "ie=edge">
     <title>Weather API</title>
+    <link rel="icon" href="data:;base64,=">
     <link rel="stylesheet" type="text/css" href="weather.css">  
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <script src = "script.js"></script>
-    <script src = "myFucntion.js"></script>
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script> -->
+    <!-- <script src = "myFucntion.js"></script> -->
 
 </head>
 
     <body>
+       
+       
         <div class = outer> 
             <h1>Weather App Son</h1>
-                
 
         <div class = "search">
-
-          <form>
-            <input type="text" id="city" name="city" placeholder="Enter your City for your local Temperature." size="50"><br>
-            <input type="submit" id="submit" onclick="myFunction()">
-          </form>
+          <!-- <form> -->
+            <input type="text" class="city" name="city" placeholder="Enter your City for your local Temperature.">
+            <input type="submit" class = "button" value="yo">
+          <!-- </form> -->
         </div>
+
+        <!-- display -->
         <div class="weather-container"> 
             <img class = "icon">
             <p class = "weather"></p>
             <p class = "temp"></p>
         </div>
     </div>
+
+    <script src = "script.js"></script>
+
     </body>
 </html>
