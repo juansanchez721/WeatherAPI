@@ -1,12 +1,15 @@
 var button = document.querySelector('.button');
-var city = document.querySelector('.city');
+var city = document.querySelector('.city');   //user input
 var displaycity = document.querySelector('.displaycity');
-var weather = document.querySelector('.weather');
+// var weather = document.querySelector('.weather');
 var temp = document.querySelector('.temp');
+var wrongcity = document.querySelector('.wrongcity');
+
 
   
 button.addEventListener('click', function(){
 
+    wrongcity.innerHTML = "";
 fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city.value + '&units=imperial&appid=58026d375fc780e495253cb20fdb3452')
 .then(response => response.json())
 .then(data => {
@@ -26,6 +29,15 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city.value + '&unit
     // console.log(weatherValue + " in " + data.name);
 })
 
-.catch(err => console.log("Nah cuz wrond city"))
+.catch(err => {
+    
+    // console.log("Nah cuz wrond city") 
+    wrongcity.innerHTML = "City not found. Please enter your city again.";
+
+
+    });
+// wrongcity.innerHTML = "City not found. Please enter your city again.";
+// wrongcity.style.display = "block";
+
     
 });

@@ -14,13 +14,14 @@ body{
 }
 
 .search{
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     height: 75px;
     width: 100%;
 }
 .weather-container{
 
-    /* background-color: white; */
+    background-color: darkblue;
+    padding: 20px;
 }
 input[type="text"]{
     height: 50px;
