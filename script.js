@@ -4,12 +4,15 @@ var displaycity = document.querySelector('.displaycity');
 // var weather = document.querySelector('.weather');
 var temp = document.querySelector('.temp');
 var wrongcity = document.querySelector('.wrongcity');
+var weathercontainer = document.querySelector('.weather-container');
 
 
   
 button.addEventListener('click', function(){
 
-    wrongcity.innerHTML = "";
+    wrongcity.style.display = "none";
+    weathercontainer.style.display = "block";
+
 fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city.value + '&units=imperial&appid=58026d375fc780e495253cb20fdb3452')
 .then(response => response.json())
 .then(data => {
@@ -32,7 +35,9 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city.value + '&unit
 .catch(err => {
     
     // console.log("Nah cuz wrond city") 
-    wrongcity.innerHTML = "City not found. Please enter your city again.";
+    weathercontainer.style.display = "none";
+
+    wrongcity.style.display = "block";
 
 
     });
