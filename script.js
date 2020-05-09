@@ -1,11 +1,18 @@
 var button = document.querySelector('.button');
 var city = document.querySelector('.city');   //user input
 var displaycity = document.querySelector('.displaycity');
-// var weather = document.querySelector('.weather');
+var weather = document.querySelector('.weather');
 var temp = document.querySelector('.temp');
 var wrongcity = document.querySelector('.wrongcity');
 var weathercontainer = document.querySelector('.weather-container');
 
+city.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+     event.preventDefault();
+
+     button.addEventListener('click',      alert("test test"));
+    }
+  });
 
   
 button.addEventListener('click', function(){
@@ -20,29 +27,26 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city.value + '&unit
 
     var iconValue = data.weather[0].icon;
     var cityname = data.name;
-    console.log(cityname);
     var weatherValue = data.main.temp;
+    var weathercondition = data.weather[0].main;
 
     // console.log("http://openweathermap.org/img/wn/" + iconValue + ".png");
 
     document.getElementById('icon').setAttribute('src', "http://openweathermap.org/img/wn/" + iconValue + ".png") ;
 
     displaycity.innerHTML = cityname;
-    temp.innerHTML = weatherValue;
+    temp.innerHTML = weatherValue + " &#176F";
+    weather.innerHTML = weathercondition;
+    
     // console.log(weatherValue + " in " + data.name);
 })
 
 .catch(err => {
     
-    // console.log("Nah cuz wrond city") 
     weathercontainer.style.display = "none";
-
     wrongcity.style.display = "block";
 
 
     });
-// wrongcity.innerHTML = "City not found. Please enter your city again.";
-// wrongcity.style.display = "block";
-
     
 });

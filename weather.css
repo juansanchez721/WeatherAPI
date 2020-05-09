@@ -1,10 +1,12 @@
 body{
-    background-color:  #b3cde0 ;
+    background-color:  #03396c;
     display: flex;
     justify-content: center;
 
 }
 .outer{
+    min-width: 350px;
+    max-width: 500px;
     font-size: xx-large;
     font-family: sans-serif;
     margin-top: 50px;
@@ -19,19 +21,21 @@ body{
     width: 100%;
 }
 .weather-container{
+    height: 500px;
+    background-color:darkgray;
+    border-radius: 15px;
 
-    background-color:#03396c ;
-    padding: 20px;
+    /* padding: 20px; */
 }
 input[type="text"]{
     height: 40px;
-    /* max-width:400px; */
+    width:60%;
     background: #e7e7e7;
     font-family: sans-serif;
     /* font-weight: bold; */
     font-size: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     padding-left: 10px;
 }
 input[type="submit"]{
