@@ -6,19 +6,10 @@ var temp = document.querySelector('.temp');
 var wrongcity = document.querySelector('.wrongcity');
 var weathercontainer = document.querySelector('.weather-container');
 
-city.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-     event.preventDefault();
 
-     button.addEventListener('click',      alert("test test"));
-    }
-  });
-
-  
-button.addEventListener('click', function(){
+function searchcity(){
 
     wrongcity.style.display = "none";
-    weathercontainer.style.display = "block";
 
 fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city.value + '&units=imperial&appid=58026d375fc780e495253cb20fdb3452')
 .then(response => response.json())
@@ -39,6 +30,8 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city.value + '&unit
     weather.innerHTML = weathercondition;
     
     // console.log(weatherValue + " in " + data.name);
+    weathercontainer.style.display = "block";
+
 })
 
 .catch(err => {
@@ -49,4 +42,18 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city.value + '&unit
 
     });
     
-});
+}
+
+
+document.getElementById("button").addEventListener("click", function(){
+    searchcity() 
+ });
+
+
+city.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+    //  event.preventDefault();
+    //  button.addEventListener('click', alert("yo"));
+    searchcity();
+    }
+  });
